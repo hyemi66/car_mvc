@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven /> <!-- 스프링 컨트롤러 클래스 선언시 애노테이션을 이용해서 작성할 수 있다는 것을 선언하는 의미 -->
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+	<!-- STS개발 툴 가상 경로 src/main/webapp/resources/ 이 경로 하위에는
+	 HTMl, CSS, javascript, jQuery, 이미지 등 사이트 개발에 필요한 리소스 자원이 들어가는 경로이다 -->
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<!-- 뷰페이지 경로인 뷰리졸브가 설정되어 있다. /WEB-INF/views/ -->
+		<beans:property name="suffix" value=".jsp" />
+		<!-- 뷰페이지 확장자가 .jsp -->
+	</beans:bean>
+	
+	<context:component-scan base-package="com.car.controller" />
+	<!-- context:component-scan 태그는 com.naver.controller패키지에 있는 
+	스프링 컨트롤러 클래스를 자동으로 찾아서 (AUTO 스캔) 애노테이션 처리가 된 컨트롤러 클래스를 스프링에서 인식하게 해줌 -->
+	
+	
+	
+</beans:beans>
