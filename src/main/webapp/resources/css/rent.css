@@ -1,0 +1,28 @@
+#bigbox {
+	font-family: Arial, sans-serif;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+label {
+	font-weight: bold;
+}
+
+input[type="text"], input[type="number"], select {
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 10px;
+}
+
+input[type="submit"] {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #0056b3;
+}

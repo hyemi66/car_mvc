@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.car.vo.BoardVO" alias="board"/>
+		<typeAlias type="com.car.vo.RentalVO" alias="rental"/>
+		<typeAlias type="com.car.vo.TestVO" alias="test"/>
+		<typeAlias type="com.car.vo.MemberVO" alias="member"/>
+		<typeAlias type="com.car.vo.CarVO" alias="car"/>
+	</typeAliases>
+</configuration>

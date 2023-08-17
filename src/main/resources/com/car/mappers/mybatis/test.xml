@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Test">
+
+	<!-- 렌트정보 저장 -->
+    <insert id="test_in" parameterType="test">
+        INSERT INTO car_test (mnum, mid, car_name)
+        VALUES (car_test_seq.NEXTVAL, #{mid}, #{car_name})
+    </insert>
+    
+    <!-- 목록 가져오기 -->
+    <select id="t_list" resultType="test" parameterType="test">
+    	select * from car_test where mid = #{mid, jdbcType=VARCHAR}
+    </select>
+    
+
+</mapper>
